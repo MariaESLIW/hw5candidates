@@ -1,46 +1,47 @@
 ﻿using hw5candidate;
+using Internal;
 // Create array of candidates (task 5)
-hw5candidate.Candidate[] candidates = new hw5candidate.Candidate[5];
+Candidate[] candidates = new Candidate[5];
 
-hw5candidate.Address address = new hw5candidate.Address("Minsk", "Chapaeva", 5, 100);
-hw5candidate.Person person = new hw5candidate.Person("Vasilii", "Vasiliev", address);
-hw5candidate.SubjectScore subjectScore1 = new hw5candidate.SubjectScore("Physics", 10);
-hw5candidate.SubjectScore subjectScore2 = new hw5candidate.SubjectScore("Math", 7);
-hw5candidate.SubjectScore subjectScore3 = new hw5candidate.SubjectScore("History", 5);
-hw5candidate.SubjectScore[] subjectScores0 = {subjectScore1, subjectScore2, subjectScore3 };
-candidates[0] = new hw5candidate.Candidate(person, subjectScores0);
+Address address = new Address("Minsk", "Chapaeva", 5, 100);
+Person person = new Person("Vasilii", "Vasiliev", address);
+SubjectScore subjectScore1 = new SubjectScore("Physics", 10);
+SubjectScore subjectScore2 = new SubjectScore("Math", 7);
+SubjectScore subjectScore3 = new SubjectScore("History", 5);
+SubjectScore[] subjectScores0 = {subjectScore1, subjectScore2, subjectScore3 };
+candidates[0] = new Candidate(person, subjectScores0);
 
-address = new hw5candidate.Address("Wroclaw", "SilverTower", 5, 78);
-person = new hw5candidate.Person("Petia", "Petrov", address);
-subjectScore1 = new hw5candidate.SubjectScore("Physics", 9);
-subjectScore2 = new hw5candidate.SubjectScore("Math", 8);
-subjectScore3 = new hw5candidate.SubjectScore("History", 6);
-hw5candidate.SubjectScore[] subjectScores1 = { subjectScore1, subjectScore2, subjectScore3 };
-candidates[1] = new hw5candidate.Candidate(person, subjectScores1);
+address = new Address("Wroclaw", "SilverTower", 5, 78);
+person = new Person("Petia", "Petrov", address);
+subjectScore1 = new SubjectScore("Physics", 9);
+subjectScore2 = new SubjectScore("Math", 8);
+subjectScore3 = new SubjectScore("History", 6);
+SubjectScore[] subjectScores1 = { subjectScore1, subjectScore2, subjectScore3 };
+candidates[1] = new Candidate(person, subjectScores1);
 
-address = new hw5candidate.Address("Minsk", "Gurskogo", 1, 2);
-person = new hw5candidate.Person("Sasha", "Sashov", address);
-subjectScore1 = new hw5candidate.SubjectScore("Physics", 6);
-subjectScore2 = new hw5candidate.SubjectScore("Math", 8);
-subjectScore3 = new hw5candidate.SubjectScore("History", 7);
-hw5candidate.SubjectScore[] subjectScores2 = { subjectScore1, subjectScore2, subjectScore3 };
-candidates[2] = new hw5candidate.Candidate(person, subjectScores2);
+address = new Address("Minsk", "Gurskogo", 1, 2);
+person = new Person("Sasha", "Sashov", address);
+subjectScore1 = new SubjectScore("Physics", 6);
+subjectScore2 = new SubjectScore("Math", 8);
+subjectScore3 = new SubjectScore("History", 7);
+SubjectScore[] subjectScores2 = { subjectScore1, subjectScore2, subjectScore3 };
+candidates[2] = new Candidate(person, subjectScores2);
 
-address = new hw5candidate.Address("Lviv", "Kultparkivska", 7, 95);
-person = new hw5candidate.Person("Taras Tarasov", "Petrov", address);
-subjectScore1 = new hw5candidate.SubjectScore("Physics", 8);
-subjectScore2 = new hw5candidate.SubjectScore("Math", 9);
-subjectScore3 = new hw5candidate.SubjectScore("History", 6);
-hw5candidate.SubjectScore[] subjectScores3 = { subjectScore1, subjectScore2, subjectScore3 };
-candidates[3] = new hw5candidate.Candidate(person, subjectScores3);
+address = new Address("Lviv", "Kultparkivska", 7, 95);
+person = new Person("Taras Tarasov", "Petrov", address);
+subjectScore1 = new SubjectScore("Physics", 8);
+subjectScore2 = new SubjectScore("Math", 9);
+subjectScore3 = new SubjectScore("History", 6);
+SubjectScore[] subjectScores3 = { subjectScore1, subjectScore2, subjectScore3 };
+candidates[3] = new Candidate(person, subjectScores3);
 
-address = new hw5candidate.Address("Batumi", "Batumadze", 105, 79);
-person = new hw5candidate.Person("Gogi", "Gogadze", address);
-subjectScore1 = new hw5candidate.SubjectScore("Physics", 3);
-subjectScore2 = new hw5candidate.SubjectScore("Math", 5);
-subjectScore3 = new hw5candidate.SubjectScore("History", 7);
-hw5candidate.SubjectScore[] subjectScores4 = { subjectScore1, subjectScore2, subjectScore3 };
-candidates[4] = new hw5candidate.Candidate(person, subjectScores4);
+address = new Address("Batumi", "Batumadze", 105, 79);
+person = new Person("Gogi", "Gogadze", address);
+subjectScore1 = new SubjectScore("Physics", 3);
+subjectScore2 = new SubjectScore("Math", 5);
+subjectScore3 = new SubjectScore("History", 7);
+SubjectScore[] subjectScores4 = { subjectScore1, subjectScore2, subjectScore3 };
+candidates[4] = new Candidate(person, subjectScores4);
 
 // Print streets (task 6)
 for (int i=0; i<candidates.Length; i++)
@@ -56,7 +57,7 @@ Boolean isContained = false; // chech if subject contained subjectScores of cand
  
 for (int i = 0; i < candidates.Length; i++)
 {
-    hw5candidate.SubjectScore[] scores = candidates[i].getSubjectScores();
+    SubjectScore[] scores = candidates[i].getSubjectScores();
     for (int j=0; j<scores.Length; j++)
     {
         String subjectName = scores[j].getSubjectName();
@@ -79,4 +80,28 @@ if (isContained)
 } else
 {
     Console.WriteLine("\nThere's no such subject as a " + subject + " in subject scores.");
+}
+
+UniversityEmployee universityEmployee1 = new Teacher("301011975B072PB1",
+    new Person("Vasilii", "Vasiliev", new Address("Minsk", "Chapaeva", 5, 100)),
+    new Course("Physics", "About everything"));
+
+UniversityEmployee universityEmployee2 = new Teacher("301011965B068PB3",
+    new Person("Petia", "Petrov", new Address("Wroclaw", "SilverTower", 5, 78)),
+    new Course("ComputerScience", "Java"));
+
+UniversityEmployee universityEmployee3 = new SupportStaff("301011980B072PB7",
+    new Person("Sasha", "Sashov", new Address("Minsk", "Gurskogo", 1, 2)), "driver");
+
+UniversityEmployee universityEmployee4 = new SupportStaff("301011990B072PB5",
+    new Person("Taras", "Tarasov", new Address("Lviv", "Kultparkivska", 7, 95)), "security");
+
+UniversityEmployee universityEmployee5 = new SupportStaff("401011960B072PB9",
+    new Person("Gogi", "Gogadze", new Address("Batumi", "Batumadze", 105, 79)), "rector");
+
+UniversityEmployee[] employees = { universityEmployee1, universityEmployee2, universityEmployee3, universityEmployee4, universityEmployee5 };
+
+for (int i = 0; i < employees.Length; i++)
+{
+    Console.WriteLine(employees[i].Person.getName() + employees[i].getOfficialDuties);
 }

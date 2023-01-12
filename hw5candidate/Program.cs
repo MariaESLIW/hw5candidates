@@ -3,57 +3,17 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        // Create array of candidates (task 5)
-        Candidate[] candidates = new Candidate[5];
+        // Create array of candidates (task 0.5)
+        Candidate[] candidates = createCandidates();
 
-        Address address = new Address("Minsk", "Chapaeva", 5, 100);
-        Person person = new Person("Vasilii", "Vasiliev", address);
-        SubjectScore subjectScore1 = new SubjectScore("Physics", 10);
-        SubjectScore subjectScore2 = new SubjectScore("Math", 7);
-        SubjectScore subjectScore3 = new SubjectScore("History", 5);
-        SubjectScore[] subjectScores0 = { subjectScore1, subjectScore2, subjectScore3 };
-        candidates[0] = new Candidate(person, subjectScores0);
-
-        address = new Address("Wroclaw", "SilverTower", 5, 78);
-        person = new Person("Petia", "Petrov", address);
-        subjectScore1 = new SubjectScore("Physics", 9);
-        subjectScore2 = new SubjectScore("Math", 8);
-        subjectScore3 = new SubjectScore("History", 6);
-        SubjectScore[] subjectScores1 = { subjectScore1, subjectScore2, subjectScore3 };
-        candidates[1] = new Candidate(person, subjectScores1);
-
-        address = new Address("Minsk", "Gurskogo", 1, 2);
-        person = new Person("Sasha", "Sashov", address);
-        subjectScore1 = new SubjectScore("Physics", 6);
-        subjectScore2 = new SubjectScore("Math", 8);
-        subjectScore3 = new SubjectScore("History", 7);
-        SubjectScore[] subjectScores2 = { subjectScore1, subjectScore2, subjectScore3 };
-        candidates[2] = new Candidate(person, subjectScores2);
-
-        address = new Address("Lviv", "Kultparkivska", 7, 95);
-        person = new Person("Taras Tarasov", "Petrov", address);
-        subjectScore1 = new SubjectScore("Physics", 8);
-        subjectScore2 = new SubjectScore("Math", 9);
-        subjectScore3 = new SubjectScore("History", 6);
-        SubjectScore[] subjectScores3 = { subjectScore1, subjectScore2, subjectScore3 };
-        candidates[3] = new Candidate(person, subjectScores3);
-
-        address = new Address("Batumi", "Batumadze", 105, 79);
-        person = new Person("Gogi", "Gogadze", address);
-        subjectScore1 = new SubjectScore("Physics", 3);
-        subjectScore2 = new SubjectScore("Math", 5);
-        subjectScore3 = new SubjectScore("History", 7);
-        SubjectScore[] subjectScores4 = { subjectScore1, subjectScore2, subjectScore3 };
-        candidates[4] = new Candidate(person, subjectScores4);
-
-        // Print streets (task 6)
+        // Print streets (task 1.6)
         for (int i = 0; i < candidates.Length; i++)
         {
             string street = candidates[i].getPerson().getAddress().getStreet();
             Console.WriteLine(street);
         }
 
-        // Print maxSubjectScore (task 7)
+        // Print maxSubjectScore (task 1.7)
         int maxScore = 0;
         string subject = "Math";  // subject for which we try to find maxScore
         bool isContained = false; // chech if subject contained subjectScores of candidates
@@ -130,5 +90,53 @@ internal class Program
         UniversityEmployee[] employees = { universityEmployee1, universityEmployee2, universityEmployee3, universityEmployee4, universityEmployee5 };
 
         return employees;
+    }
+
+    public static Candidate[] createCandidates()
+    {
+        // Create array of candidates (task 1.5)
+        Candidate[] candidates = new Candidate[5];
+
+        Address address = new Address("Minsk", "Chapaeva", 5, 100);
+        Person person = new Person("Vasilii", "Vasiliev", address);
+        SubjectScore subjectScore1 = new SubjectScore("Physics", 10);
+        SubjectScore subjectScore2 = new SubjectScore("Math", 7);
+        SubjectScore subjectScore3 = new SubjectScore("History", 5);
+        SubjectScore[] subjectScores0 = { subjectScore1, subjectScore2, subjectScore3 };
+        candidates[0] = new Candidate(person, subjectScores0);
+
+        address = new Address("Wroclaw", "SilverTower", 5, 78);
+        person = new Person("Petia", "Petrov", address);
+        subjectScore1 = new SubjectScore("Physics", 9);
+        subjectScore2 = new SubjectScore("Math", 8);
+        subjectScore3 = new SubjectScore("History", 6);
+        SubjectScore[] subjectScores1 = { subjectScore1, subjectScore2, subjectScore3 };
+        candidates[1] = new Candidate(person, subjectScores1);
+
+        address = new Address("Minsk", "Gurskogo", 1, 2);
+        person = new Person("Sasha", "Sashov", address);
+        subjectScore1 = new SubjectScore("Physics", 6);
+        subjectScore2 = new SubjectScore("Math", 8);
+        subjectScore3 = new SubjectScore("History", 7);
+        SubjectScore[] subjectScores2 = { subjectScore1, subjectScore2, subjectScore3 };
+        candidates[2] = new Candidate(person, subjectScores2);
+
+        address = new Address("Lviv", "Kultparkivska", 7, 95);
+        person = new Person("Taras Tarasov", "Petrov", address);
+        subjectScore1 = new SubjectScore("Physics", 8);
+        subjectScore2 = new SubjectScore("Math", 9);
+        subjectScore3 = new SubjectScore("History", 6);
+        SubjectScore[] subjectScores3 = { subjectScore1, subjectScore2, subjectScore3 };
+        candidates[3] = new Candidate(person, subjectScores3);
+
+        address = new Address("Batumi", "Batumadze", 105, 79);
+        person = new Person("Gogi", "Gogadze", address);
+        subjectScore1 = new SubjectScore("Physics", 3);
+        subjectScore2 = new SubjectScore("Math", 5);
+        subjectScore3 = new SubjectScore("History", 7);
+        SubjectScore[] subjectScores4 = { subjectScore1, subjectScore2, subjectScore3 };
+        candidates[4] = new Candidate(person, subjectScores4);
+
+        return candidates;
     }
 }

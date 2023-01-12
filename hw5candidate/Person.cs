@@ -21,9 +21,8 @@ namespace hw5candidate
 
         public String getName()
         {
-            return this.firstname + this.lastname;
+            return this.firstname + " " + this.lastname;
         }
-
     }
 }
 

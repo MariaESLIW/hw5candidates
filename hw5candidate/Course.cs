@@ -10,6 +10,11 @@ namespace hw5candidate
             this.name = name;
             this.description = description;
         }
+
+        public override string ToString()
+        {
+            return "Course name: " + this.name + ", Course description: " + this.description;
+        }
     }
 }
 

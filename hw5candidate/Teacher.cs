@@ -10,7 +10,7 @@ namespace hw5candidate
         }
         public override string getOfficialDuties()
         {
-            return course.ToString();
+            return course.ToString()!;
         }
     }
 }

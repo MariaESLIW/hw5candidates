@@ -6,14 +6,18 @@ namespace hw5candidate
         String taxID;
         Person person;
 
-        public Person Person { get; }
-
         public UniversityEmployee(String taxID, Person person)
         {
             this.taxID = taxID;
             this.person = person;
         }
+
         public abstract String getOfficialDuties();
+
+        public Person getPerson()
+        {
+            return this.person;
+        }
     }
 }
 

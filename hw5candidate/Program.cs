@@ -87,24 +87,6 @@ internal class Program
         }
 
         // task 2.8 create array of university employees
-        UniversityEmployee universityEmployee1 = new Teacher("301011975B072PB1",
-            new Person("Vasilii", "Vasiliev", new Address("Minsk", "Chapaeva", 5, 100)),
-            new Course("Physics", "About everything"));
-
-        UniversityEmployee universityEmployee2 = new Teacher("301011965B068PB3",
-            new Person("Petia", "Petrov", new Address("Wroclaw", "SilverTower", 5, 78)),
-            new Course("ComputerScience", "Java"));
-
-        UniversityEmployee universityEmployee3 = new SupportStaff("301011980B072PB7",
-            new Person("Sasha", "Sashov", new Address("Minsk", "Gurskogo", 1, 2)), "driver");
-
-        UniversityEmployee universityEmployee4 = new SupportStaff("301011990B072PB5",
-            new Person("Taras", "Tarasov", new Address("Lviv", "Kultparkivska", 7, 95)), "security");
-
-        UniversityEmployee universityEmployee5 = new SupportStaff("401011960B072PB9",
-            new Person("Gogi", "Gogadze", new Address("Batumi", "Batumadze", 105, 79)), "rector");
-
-        //UniversityEmployee[] employees = { universityEmployee1, universityEmployee2, universityEmployee3, universityEmployee4, universityEmployee5 };
         UniversityEmployee[] employees = createUniversityEmployees();
 
         // task 2.9 - all employees with duties

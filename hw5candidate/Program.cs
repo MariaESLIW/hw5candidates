@@ -9,7 +9,7 @@ internal class Program
         // Print streets (task 1.6)
         for (int i = 0; i < candidates.Length; i++)
         {
-            string street = candidates[i].getPerson().getAddress().getStreet();
+            string street = candidates[i].Person.Address.Street;
             Console.WriteLine(street);
         }
 
@@ -20,14 +20,14 @@ internal class Program
 
         for (int i = 0; i < candidates.Length; i++)
         {
-            SubjectScore[] scores = candidates[i].getSubjectScores();
+            SubjectScore[] scores = candidates[i].SubjectScores;
             for (int j = 0; j < scores.Length; j++)
             {
-                string subjectName = scores[j].getSubjectName();
+                string subjectName = scores[j].SubjectName;
                 if (subject == subjectName)
                 {
                     isContained = true;
-                    int score = scores[j].getScore();
+                    int score = scores[j].Score;
                     if (score > maxScore)
                     {
                         maxScore = score;
@@ -39,11 +39,11 @@ internal class Program
         // Check if there's such a subject in the subjectScores
         if (isContained)
         {
-            Console.WriteLine("\n" + subject + " subject maxScore: " + maxScore);
+            Console.WriteLine($"\n{subject} subject maxScore: {maxScore}");
         }
         else
         {
-            Console.WriteLine("\nThere's no such subject as a " + subject + " in subject scores.");
+            Console.WriteLine($"\nThere's no such subject as a {subject} in subject scores.");
         }
 
         // task 2.8 create array of university employees
@@ -52,7 +52,7 @@ internal class Program
         // task 2.9 - all employees with duties
         for (int i = 0; i < employees.Length; i++)
         {
-            Console.WriteLine(employees[i].getPerson().getName() + ": " + employees[i].getOfficialDuties());
+            Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].getOfficialDuties()}");
         }
 
 
@@ -61,7 +61,7 @@ internal class Program
         {
             if (employees[i] is Teacher)
             {
-                Console.WriteLine(employees[i].getPerson().getName() + ": " + employees[i].getOfficialDuties());
+                Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].getOfficialDuties()}");
             }
         }
 
@@ -87,7 +87,14 @@ internal class Program
         UniversityEmployee universityEmployee5 = new SupportStaff("401011960B072PB9",
             new Person("Gogi", "Gogadze", new Address("Batumi", "Batumadze", 105, 79)), "rector");
 
-        UniversityEmployee[] employees = { universityEmployee1, universityEmployee2, universityEmployee3, universityEmployee4, universityEmployee5 };
+        UniversityEmployee[] employees =
+            {
+            universityEmployee1,
+            universityEmployee2,
+            universityEmployee3,
+            universityEmployee4,
+            universityEmployee5
+        };
 
         return employees;
     }

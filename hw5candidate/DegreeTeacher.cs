@@ -1,14 +1,14 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
     public class DegreeTeacher : Teacher
     {
-        String degree;
-        String title;
-        public DegreeTeacher(String taxID, Person person, Course course, String degree, String title) : base(taxID, person, course)
+        public string Degree { get; set; }
+        public string Title { get; set; }
+        public DegreeTeacher(string taxId, Person person, Course course, string degree, string title) :
+            base(taxId, person, course)
         {
-            this.degree = degree;
-            this.title = title;
+            Degree = degree;
+            Title = title;
         }
     }
 }

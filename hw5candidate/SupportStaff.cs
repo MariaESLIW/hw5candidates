@@ -1,16 +1,15 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
     public class SupportStaff : UniversityEmployee
     {
-        String duties;
-        public SupportStaff(String taxID, Person person, String duties) : base(taxID, person)
+        public string Duties { get; set; }
+        public SupportStaff(String taxId, Person person, String duties) : base(taxId, person)
         {
-            this.duties = duties;
+            Duties = duties;
         }
         public override string getOfficialDuties()
         {
-            return duties;
+            return Duties;
         }
     }
 }

@@ -1,23 +1,17 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
     public abstract class UniversityEmployee
     {
-        String taxID;
-        Person person;
+        public string TaxId { get; set; }
+        public Person Person { get; set; }
 
-        public UniversityEmployee(String taxID, Person person)
+        public UniversityEmployee(string taxId, Person person)
         {
-            this.taxID = taxID;
-            this.person = person;
+            TaxId = taxId;
+            Person = person;
         }
 
         public abstract String getOfficialDuties();
-
-        public Person getPerson()
-        {
-            return this.person;
-        }
     }
 }
 

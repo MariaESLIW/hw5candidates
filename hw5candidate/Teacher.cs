@@ -1,16 +1,15 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
     public class Teacher : UniversityEmployee
     {
-        Course course;
-        public Teacher(String taxID, Person person, Course course) : base(taxID, person)
+        public Course Course { get; set; }
+        public Teacher(string taxId, Person person, Course course) : base(taxId, person)
         {
-            this.course = course;
+            Course = course;
         }
         public override string getOfficialDuties()
         {
-            return course.ToString()!;
+            return Course.ToString()!;
         }
     }
 }

@@ -1,19 +1,18 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
     public class Course
     {
-        String name;
-        String description;
-        public Course(String name, String description)
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public Course(string name, string description)
         {
-            this.name = name;
-            this.description = description;
+            Name = name;
+            Description = description;
         }
 
         public override string ToString()
         {
-            return "Course name: " + this.name + ", Course description: " + this.description;
+            return $"Course name: {Name}, Course description: {Description}";
         }
     }
 }

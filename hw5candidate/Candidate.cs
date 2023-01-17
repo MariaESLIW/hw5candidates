@@ -1,25 +1,14 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
 	public class Candidate
 	{
-		hw5candidate.Person person;
-		hw5candidate.SubjectScore[] subjectScores;
+		public Person Person { get; set; }
+		public SubjectScore[] SubjectScores { get; set; }
 
-		public Candidate(hw5candidate.Person person, hw5candidate.SubjectScore[] subjectScores)
+		public Candidate(Person person, SubjectScore[] subjectScores)
 		{
-			this.person = person;
-			this.subjectScores = subjectScores;
-		}
-
-		public hw5candidate.Person getPerson()
-		{
-			return this.person;
-		}
-
-		public hw5candidate.SubjectScore[] getSubjectScores()
-		{
-			return this.subjectScores;
+			Person = person;
+			SubjectScores = subjectScores;
 		}
 	}
 }

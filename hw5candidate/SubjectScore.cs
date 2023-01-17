@@ -1,27 +1,15 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
 	public class SubjectScore
 	{
-		String subjectName;
-		int score;
+        public string SubjectName { get; set; }
+        public int Score { get; set; }
 
-		public SubjectScore(String subjectName, int score)
+        public SubjectScore(string subjectName, int score)
 		{
-			this.subjectName = subjectName;
-			this.score = score;
+			SubjectName = subjectName;
+			Score = score;
 		}
-
-		public int getScore()
-		{
-			return this.score;
-		}
-
-		public String getSubjectName()
-		{
-			return this.subjectName;
-
-        }
 	}
 }
 

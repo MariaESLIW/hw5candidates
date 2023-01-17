@@ -1,26 +1,50 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
 	public class Address
 	{
 
-		String city;
-		String street;
-		int houseNumber;
-		int flatNumber;
-
-		public Address(String city, String street, int houseNumber, int flatNumber)
+		public string City { get; set; }
+        public string Street { get; set; }
+        public int HouseNumber
 		{
-			this.city = city;
-			this.street = street;
-			this.houseNumber = houseNumber;
-			this.flatNumber = flatNumber;
+			get
+			{
+				return _houseNumber;
+			}
+			set
+			{
+				if (value>0)
+				{
+					_houseNumber = value;
+				}
+			}
+		}
+		private int _houseNumber;
+
+        public int FlatNumber
+		{
+			get
+			{
+				return _flatNumber;
+			}
+			set
+			{
+				if (value > 0)
+				{
+					_flatNumber = value;
+				}
+			}
+		}
+		private int _flatNumber;
+
+        public Address(string city, string street, int houseNumber, int flatNumber)
+		{
+			City = city;
+			Street = street;
+			HouseNumber = houseNumber;
+			FlatNumber = flatNumber;
 		}
 
-		public String getStreet()
-		{
-			return this.street;
-		}
 	}
 }
 

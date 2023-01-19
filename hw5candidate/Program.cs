@@ -65,6 +65,33 @@ internal class Program
             }
         }
 
+        University PIG = CreateUniversity();
+    }
+
+    // task 3.3 - create university
+    public static University CreateUniversity()
+    {
+        Room[] rooms1 = { Room.Auxiliary, Room.Laboratory, Room.Laboratory };
+        Room[] rooms2 = { Room.Lecture, Room.Lecture, Room.Seminar };
+
+        Building building1 = new Building(rooms1);
+        Building building2 = new Building(rooms2);
+
+        Building[] buildings = { building1, building2 };
+
+        UniversityEmployee rector = new DegreeTeacher(
+            "301015577B072PB1",
+            new Person("Vladislav", "Vlasov", new Address("Minsk", "Skaryny", 15, 3)),
+            new Course("Math", "Linear Algebra"),
+            "PhD", "Professor");
+
+        University university = new University(
+            createUniversityEmployees(),
+            rector,
+            buildings,
+            new Address("Minsk", "Skaryny", 15, 3));
+
+        return university;
     }
 
     public static UniversityEmployee[] createUniversityEmployees()

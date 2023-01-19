@@ -1,11 +1,11 @@
-﻿using System;
-namespace hw5candidate
+﻿namespace hw5candidate
 {
-	public class Room
+	public enum Room
 	{
-		public Room()
-		{
-		}
-	}
+		Lecture,
+		Laboratory,
+		Seminar,
+		Auxiliary
+	} 
 }
 

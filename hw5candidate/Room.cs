@@ -1,11 +1,29 @@
 ﻿namespace hw5candidate
 {
-	public enum Room
+	public class Room
 	{
-		Lecture,
-		Laboratory,
-		Seminar,
-		Auxiliary
-	} 
+		RoomType RoomType { get; set; }
+		int RoomNumber
+		{
+			get
+			{
+				return _roomNumber;
+			}
+			set
+			{
+				if (value>=0)
+				{
+					_roomNumber = value;
+				}
+			}
+		}
+		int _roomNumber;
+
+		public Room(RoomType roomType, int roomNumber)
+		{
+			RoomType = roomType;
+			RoomNumber = roomNumber;
+		}
+	}
 }
 

@@ -78,7 +78,7 @@ internal class Program
     {
         for (int i = 0; i < employees.Length; i++)
         {
-            Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].getOfficialDuties()}");
+            Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].GetOfficialDuties()}");
         }
     }
 
@@ -89,7 +89,7 @@ internal class Program
         {
             if (employees[i] is Teacher)
             {
-                Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].getOfficialDuties()}");
+                Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].GetOfficialDuties()}");
             }
         }
     }

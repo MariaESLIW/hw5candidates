@@ -94,8 +94,18 @@ namespace hw5candidate
         // task 3.3 - create university
         public static University CreateUniversity()
         {
-            Room[] rooms1 = { Room.Auxiliary, Room.Laboratory, Room.Laboratory };
-            Room[] rooms2 = { Room.Lecture, Room.Lecture, Room.Seminar };
+            Room[] rooms1 =
+                {
+                new Room(RoomType.Auxiliary, 123),
+                new Room(RoomType.Laboratory,55),
+                new Room(RoomType.Lecture, 234)
+                 };
+            Room[] rooms2 =
+                {
+                new Room(RoomType.Seminar, 35),
+                new Room(RoomType.Lecture,100),
+                new Room(RoomType.Lecture, 77)
+                };
 
             Building[] buildings = {
                 new Building(rooms1, new Address("Minsk", "Skaryny", 77, 1)),
@@ -116,10 +126,6 @@ namespace hw5candidate
 
             return university;
         }
-
-    
-
-        
     }
 }
 

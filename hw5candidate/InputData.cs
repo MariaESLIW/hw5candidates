@@ -10,7 +10,7 @@ namespace hw5candidate
         // Create array of candidates (task 1.5)
         public static Candidate[] CreateCandidates()
         {
-            Candidate[] candidates = new Candidate[5];
+            var candidates = new Candidate[5];
 
             SubjectScore[] subjectScores0 = {
                 new SubjectScore("Physics", 10),
@@ -57,25 +57,25 @@ namespace hw5candidate
         // task 2.8 create array of university employees
         public static UniversityEmployee[] CreateUniversityEmployees()
         {
-            UniversityEmployee universityEmployee1 = new Teacher(
+            var universityEmployee1 = new Teacher(
                 "301011975B072PB1",
                 new Person("Vasilii", "Vasiliev", new Address("Minsk", "Chapaeva", 5, 100)),
                 new Course("Physics", "About everything"));
 
-            UniversityEmployee universityEmployee2 = new Teacher(
+            var universityEmployee2 = new Teacher(
                 "301011965B068PB3",
                 new Person("Petia", "Petrov", new Address("Wroclaw", "SilverTower", 5, 78)),
                 new Course("ComputerScience", "Java"));
 
-            UniversityEmployee universityEmployee3 = new SupportStaff(
+            var universityEmployee3 = new SupportStaff(
                 "301011980B072PB7",
                 new Person("Sasha", "Sashov", new Address("Minsk", "Gurskogo", 1, 2)), "driver");
 
-            UniversityEmployee universityEmployee4 = new SupportStaff(
+            var universityEmployee4 = new SupportStaff(
                 "301011990B072PB5",
                 new Person("Taras", "Tarasov", new Address("Lviv", "Kultparkivska", 7, 95)), "security");
 
-            UniversityEmployee universityEmployee5 = new SupportStaff(
+            var universityEmployee5 = new SupportStaff(
                 "401011960B072PB9",
                 new Person("Gogi", "Gogadze", new Address("Batumi", "Batumadze", 105, 79)), "dean");
 
@@ -97,15 +97,18 @@ namespace hw5candidate
             Room[] rooms1 = { Room.Auxiliary, Room.Laboratory, Room.Laboratory };
             Room[] rooms2 = { Room.Lecture, Room.Lecture, Room.Seminar };
 
-            Building[] buildings = { new Building(rooms1), new Building(rooms2) };
+            Building[] buildings = {
+                new Building(rooms1, new Address("Minsk", "Skaryny", 77, 1)),
+                new Building(rooms2, new Address("Minsk", "Skaryny", 75, 21))
+            };
 
-            UniversityEmployee rector = new DegreeTeacher(
+            var rector = new DegreeTeacher(
                 "301015577B072PB1",
                 new Person("Vladislav", "Vlasov", new Address("Minsk", "Skaryny", 75, 34)),
                 new Course("Math", "Linear Algebra"),
                 "PhD", "Professor");
 
-            University university = new University(
+            var university = new University(
                 CreateUniversityEmployees(),
                 rector,
                 buildings,

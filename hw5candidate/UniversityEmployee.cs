@@ -11,7 +11,7 @@
             Person = person;
         }
 
-        public abstract String getOfficialDuties();
+        public abstract string GetOfficialDuties();
     }
 }
 

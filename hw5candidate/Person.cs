@@ -13,7 +13,7 @@
             Address = address;
         }
 
-        public String getName()
+        public string getName()
         {
             return $"{Firstname} {Lastname}";
         }

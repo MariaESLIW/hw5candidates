@@ -4,7 +4,7 @@ internal class Program
     private static void Main(string[] args)
     {
         // Create array of candidates (task 0.5)
-        Candidate[] candidates = InputData.CreateCandidates();
+        List<Candidate> candidates = InputData.CreateCandidates();
 
         // Print streets (task 1.6)
         PrintStreets(candidates);
@@ -13,7 +13,7 @@ internal class Program
         PrintMaxSubjectScore(candidates);
 
         // task 2.8 create array of university employees
-        UniversityEmployee[] employees = InputData.CreateUniversityEmployees();
+        List<UniversityEmployee> employees = InputData.CreateUniversityEmployees();
 
         // task 2.9 - all employees with duties
         PrintEmployeesDuties(employees);
@@ -26,10 +26,10 @@ internal class Program
     }
 
     // Print streets (task 1.6)
-    public static void PrintStreets(Candidate[] candidates)
+    public static void PrintStreets(List<Candidate> candidates)
     {
         // Print streets (task 1.6)
-        for (int i = 0; i < candidates.Length; i++)
+        for (int i = 0; i < candidates.Count; i++)
         {
             string street = candidates[i].Person.Address.Street;
             Console.WriteLine(street);
@@ -37,17 +37,17 @@ internal class Program
     }
 
     // Print maxSubjectScore (task 1.7)
-    public static void PrintMaxSubjectScore(Candidate[] candidates)
+    public static void PrintMaxSubjectScore(List<Candidate> candidates)
     {
         
         int maxScore = 0;
         string subject = "Math";  // subject for which we try to find maxScore
         bool isContained = false; // chech if subject contained subjectScores of candidates
 
-        for (int i = 0; i < candidates.Length; i++)
+        for (int i = 0; i < candidates.Count; i++)
         {
-            SubjectScore[] scores = candidates[i].SubjectScores;
-            for (int j = 0; j < scores.Length; j++)
+            List<SubjectScore> scores = candidates[i].SubjectScores;
+            for (int j = 0; j < scores.Count; j++)
             {
                 string subjectName = scores[j].SubjectName;
                 if (subject == subjectName)
@@ -74,18 +74,18 @@ internal class Program
     }
 
     // task 2.9 - all employees with duties
-    public static void PrintEmployeesDuties(UniversityEmployee[] employees)
+    public static void PrintEmployeesDuties(List<UniversityEmployee> employees)
     {
-        for (int i = 0; i < employees.Length; i++)
+        for (int i = 0; i < employees.Count; i++)
         {
             Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].GetOfficialDuties()}");
         }
     }
 
     // task 2.10 - only teachers with courses
-    public static void PrintTeaches(UniversityEmployee[] employees)
+    public static void PrintTeaches(List<UniversityEmployee> employees)
     {
-        for (int i = 0; i < employees.Length; i++)
+        for (int i = 0; i < employees.Count; i++)
         {
             if (employees[i] is Teacher)
             {

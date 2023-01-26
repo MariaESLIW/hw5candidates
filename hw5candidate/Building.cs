@@ -2,10 +2,10 @@
 {
 	public class Building:Asset
 	{
-		public Room[] Rooms { get; set; }
+		public List<Room> Rooms { get; set; }
 		public Address Address { get; set;}
 
-        public Building(Room[] rooms, Address address)
+        public Building(List<Room> rooms, Address address)
 		{
 			Rooms = rooms;
 			Address = address;

@@ -2,12 +2,16 @@
 {
 	public class University
 	{
-		public UniversityEmployee[] UniversityEmployees { get; set; }
+		public List<UniversityEmployee> UniversityEmployees { get; set; }
 		public UniversityEmployee Rector { get; set; }
-		public Building[] Buildings { get; set; }
+		public List<Building> Buildings { get; set; }
 		public Address Address { get; set; }
 
-		public University(UniversityEmployee[] universityEmployees, UniversityEmployee rector, Building[] buildings, Address address)
+		public University(
+			List<UniversityEmployee> universityEmployees,
+			UniversityEmployee rector,
+			List<Building> buildings,
+			Address address)
 		{
 			UniversityEmployees = universityEmployees;
 			Rector = rector;

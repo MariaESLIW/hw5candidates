@@ -12,6 +12,13 @@
         }
 
         public abstract string GetOfficialDuties();
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((UniversityEmployee)obj).TaxId == this.TaxId;
+        }
     }
 }
 

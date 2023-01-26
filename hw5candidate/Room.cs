@@ -24,6 +24,14 @@
 			RoomType = roomType;
 			RoomNumber = roomNumber;
 		}
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((Room)obj).RoomType == this.RoomType &&
+                ((Room)obj).RoomNumber == this.RoomNumber;
+        }
+    }
 }
 

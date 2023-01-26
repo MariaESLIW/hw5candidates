@@ -17,6 +17,14 @@
         {
             return $"{Firstname} {Lastname}";
         }
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((Person)obj).Firstname == this.Firstname &&
+                ((Person)obj).Lastname == this.Lastname;
+        }
     }
 }
 

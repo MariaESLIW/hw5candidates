@@ -24,6 +24,14 @@
 			SubjectName = subjectName;
 			Score = score;
 		}
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((SubjectScore)obj).SubjectName == this.SubjectName &&
+                ((SubjectScore)obj).Score == this.Score;
+        }
+    }
 }
 

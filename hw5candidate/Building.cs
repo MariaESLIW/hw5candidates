@@ -10,6 +10,14 @@
 			Rooms = rooms;
 			Address = address;
 		}
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((Building)obj).Rooms == this.Rooms &&
+                ((Building)obj).Address == this.Address;
+        }
+    }
 }
 

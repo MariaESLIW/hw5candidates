@@ -10,6 +10,14 @@
 			Person = person;
 			SubjectScores = subjectScores;
 		}
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((Candidate)obj).Person == this.Person &&
+                ((Candidate)obj).SubjectScores == this.SubjectScores;
+        }
+    }
 }
 

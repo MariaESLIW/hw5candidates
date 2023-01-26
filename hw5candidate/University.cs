@@ -18,6 +18,31 @@
 			Buildings = buildings;
 			Address = address;
         }
-	}
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((University)obj).Address == this.Address;
+        }
+
+		public void AddEmployee(UniversityEmployee newEmployee)
+		{
+			bool isContained = false;
+
+			foreach(UniversityEmployee employee in UniversityEmployees)
+			{
+				if(employee.Equals(newEmployee))
+				{
+					isContained = true;
+				}
+			}
+
+			if (!isContained)
+			{
+				UniversityEmployees.Add(newEmployee);
+			}
+		}
+    }
 }
 

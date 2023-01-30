@@ -43,6 +43,24 @@
 				UniversityEmployees.Add(newEmployee);
 			}
 		}
+
+        public void AddBuilding(Building newBuilding)
+        {
+            bool isContained = false;
+
+            foreach (Building building in Buildings)
+            {
+                if (building.Equals(newBuilding))
+                {
+                    isContained = true;
+                }
+            }
+
+            if (!isContained)
+            {
+                Buildings.Add(newBuilding);
+            }
+        }
     }
 }
 

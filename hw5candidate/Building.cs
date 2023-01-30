@@ -18,6 +18,24 @@
                 ((Building)obj).Rooms == this.Rooms &&
                 ((Building)obj).Address == this.Address;
         }
+
+        public void AddRoom(Room newRoom)
+        {
+            bool isContained = false;
+
+            foreach(Room room in Rooms)
+            {
+                if (room.Equals(newRoom))
+                {
+                    isContained = true;
+                }
+            }
+
+            if(!isContained)
+            {
+                Rooms.Add(newRoom);
+            }
+        }
     }
 }
 

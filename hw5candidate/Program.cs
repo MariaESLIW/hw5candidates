@@ -23,6 +23,10 @@ internal class Program
 
         // task 3.3 - create and initialize university
         University PIG = InputData.CreateUniversity();
+
+        // task 5.1 - print employees with last names begin with given letter
+        var letter = 'P';
+        PrintSortedEmployees(letter, PIG);
     }
 
     // Print streets (task 1.6)
@@ -91,6 +95,20 @@ internal class Program
             {
                 Console.WriteLine($"{employees[i].Person.getName()}: {employees[i].GetOfficialDuties()}");
             }
+        }
+    }
+
+    // task 5.1
+    public static void PrintSortedEmployees(char letter, University university)
+    {
+        var selectedEmployees = university.UniversityEmployees
+            .Where(empl => empl.Person.Lastname.StartsWith(letter))
+            .OrderBy(lastName => lastName.TaxId)
+            .ToList();
+
+        foreach (UniversityEmployee universityEmployee in selectedEmployees)
+        {
+            Console.WriteLine(universityEmployee.Person.Lastname + universityEmployee.TaxId);
         }
     }
 }

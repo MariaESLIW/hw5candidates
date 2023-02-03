@@ -75,7 +75,7 @@ namespace hw5candidate
         {
             var universityEmployee1 = new Teacher(
                 "301011975B072PB1",
-                new Person("Vasilii", "Vasiliev",
+                new Person("Vasilii", "Petrov",
                 new Address("Minsk", "Chapaeva", 5, 100)),
                 new Course("Physics", "About everything"));
 
@@ -119,7 +119,8 @@ namespace hw5candidate
                 {
                 new Room(RoomType.Auxiliary, 123),
                 new Room(RoomType.Laboratory,55),
-                new Room(RoomType.Lecture, 77)
+                new Room(RoomType.Lecture, 77),
+                new Room(RoomType.Auxiliary, 5)
                  };
             List<Room> rooms2 = new List<Room>
                 {

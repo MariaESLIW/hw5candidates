@@ -38,6 +38,12 @@ internal class Program
         // task 5.4 - print Addresses of Buildings with Selected Room
         PrintAddressesBuildingRoom(PIG, 77);
 
+        // task 5.5 - print Address of Building with Maximum Room Number
+        PrintAdressMaxRoom(PIG);
+
+        // task 5.6 - print Most Common Lastname
+        PrintMostCommonLastname(PIG);
+
     }
 
     // Print streets (task 1.6)
@@ -165,6 +171,29 @@ internal class Program
             Console.WriteLine(item);
         }
 
+    }
+
+    // task 5.5 - print Address of Building with Maximum Room Number
+    public static void PrintAdressMaxRoom(University university)
+    {
+        var listOfBuildings = university
+            .Buildings
+            .MaxBy(building => building.Rooms.Count());
+
+        Console.WriteLine(listOfBuildings.Address.City+
+                          listOfBuildings.Address.Street+
+                          listOfBuildings.Address.HouseNumber);
+    }
+
+    // task 5.6 - print Most Common Lastname
+    public static void PrintMostCommonLastname(University university)
+    {
+        var mostCommonLastname = university
+            .UniversityEmployees
+            .GroupBy(employee => employee.Person.Lastname)
+            .MaxBy(lastname => lastname.Count());
+
+        Console.WriteLine(mostCommonLastname.Key + mostCommonLastname.Count());
     }
 
 }

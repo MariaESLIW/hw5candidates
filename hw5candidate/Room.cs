@@ -3,7 +3,7 @@
 	public class Room
 	{
 		RoomType RoomType { get; set; }
-		int RoomNumber
+		public int RoomNumber
 		{
 			get
 			{

@@ -119,7 +119,7 @@ namespace hw5candidate
                 {
                 new Room(RoomType.Auxiliary, 123),
                 new Room(RoomType.Laboratory,55),
-                new Room(RoomType.Lecture, 234)
+                new Room(RoomType.Lecture, 77)
                  };
             List<Room> rooms2 = new List<Room>
                 {

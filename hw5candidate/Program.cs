@@ -27,6 +27,17 @@ internal class Program
         // task 5.1 - print employees with last names begin with given letter
         var letter = 'P';
         PrintSortedEmployees(letter, PIG);
+
+        // task 5.2 - print employees with course
+        var courseName = "ComputerScience";
+        PrintEmployeeWithSelectedCourse(courseName, PIG);
+
+        // task 5.3 - print TaxId and Duties
+        PrintTaxIdAndDuties(PIG);
+
+        // task 5.4 - print Addresses of Buildings with Selected Room
+        PrintAddressesBuildingRoom(PIG, 77);
+
     }
 
     // Print streets (task 1.6)
@@ -111,4 +122,49 @@ internal class Program
             Console.WriteLine(universityEmployee.Person.Lastname + universityEmployee.TaxId);
         }
     }
+
+    // task 5.2 - print employees with course
+    public static void PrintEmployeeWithSelectedCourse(string courseName, University university)
+    {
+        var selectedEmployees = university.UniversityEmployees.OfType<Teacher>()
+            .Where(empl => empl.Course.Name.Equals(courseName))
+            .ToList();
+
+        foreach (UniversityEmployee universityEmployee in selectedEmployees)
+        {
+            Console.WriteLine(universityEmployee.Person.Lastname + universityEmployee.GetOfficialDuties());
+        }
+
+    }
+
+    // task 5.3 - print TaxId and Duties
+    public static void PrintTaxIdAndDuties(University university)
+    {
+        var listOfTaxIdAndDuties = university
+            .UniversityEmployees
+            .Select(empl => (empl.TaxId, empl.GetOfficialDuties()))
+            .ToList();
+
+        foreach(var item in listOfTaxIdAndDuties)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    // task 5.4 - print Addresses of Buildings with Selected Room
+    public static void PrintAddressesBuildingRoom(University university, int roomNumber)
+    {
+        var listOfAddresses = university
+            .Buildings
+            .Where(building => building.Rooms.Any(room => room.RoomNumber == roomNumber))
+            .Select(building => (building.Address.City, building.Address.Street, building.Address.HouseNumber))
+            .ToList();
+
+        foreach(var item in listOfAddresses)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+
 }

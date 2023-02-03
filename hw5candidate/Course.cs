@@ -15,6 +15,14 @@
         {
             return $"Course name: {Name}, Course description: {Description}";
         }
+
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+                obj.GetType == this.GetType &&
+                ((Course)obj).Name == this.Name &&
+                ((Course)obj).Description == this.Description;
+        }
     }
 }
 

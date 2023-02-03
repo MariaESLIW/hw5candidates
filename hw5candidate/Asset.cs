@@ -1,6 +1,6 @@
 ﻿namespace hw5candidate
 {
-	public class Asset
+	public abstract class Asset
 	{
 		public Asset()
 		{

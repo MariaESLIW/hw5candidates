@@ -11,7 +11,7 @@
 
         public override string GetOfficialDuties()
         {
-            return Course.ToString()!;
+            return Course.ToString();
         }
     }
 }

@@ -45,6 +45,15 @@
 			FlatNumber = flatNumber;
 		}
 
-	}
+        public override bool Equals(object? obj)
+        {
+            return (obj != null) &&
+				obj.GetType==this.GetType &&
+				((Address) obj).City==this.City &&
+				((Address)obj).Street==this.Street &&
+				((Address)obj).HouseNumber==this.HouseNumber &&
+				((Address)obj).FlatNumber==this.FlatNumber;
+        }
+    }
 }
 
